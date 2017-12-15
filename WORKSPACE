@@ -8,15 +8,15 @@ check_version()
 
 git_repository(
     name = "io_bazel_rules_go",
-    commit = "9cf23e2aab101f86e4f51d8c5e0f14c012c2161c",  # Oct 12, 2017 (Add `build_external` option to `go_repository`)
-    remote = "https://github.com/bazelbuild/rules_go.git",
+    commit = "3e08710018d0870b132a79ee9eea709f55c90ad1",  #clnperez
+    remote = "https://github.com/clnperez/rules_go.git",
 )
 
 load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_toolchains")
 
 go_rules_dependencies()
 
-go_register_toolchains()
+go_register_toolchains(go_version="host")
 
 load("@io_bazel_rules_go//proto:def.bzl", "proto_register_toolchains")
 
